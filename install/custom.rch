@@ -1,0 +1,10 @@
+#ifdef	STATI_K
+dipstick.ex_ rcdata discardable "../releast/dipstick.ex_"
+#else
+dipstick.ex_ rcdata discardable "../release/dipstick.ex_"
+#endif
+dipstick.cn_ rcdata discardable "../release/dipstick.cn_"
+dipstick.hl_ rcdata discardable "../release/dipstick.hl_"
+#ifdef K_ANNED
+mfc42.dl_ rcdata discardable "../redist/mfc42.dl_"
+#endif

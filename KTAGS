@@ -1,0 +1,15 @@
+about-date	dipstick.rc	/LTEXT\s\+"Copyright /;"	kind:d
+about-version	dipstick.rc	/LTEXT\s\+"Dipstick, Version/;"	kind:v
+dialog-version	dipstick.rc	/^CAPTION\s\+"  Dipstick/;"	kind:v
+dndtarget-version	dipstick.rc	/IDC_DNDTARGET\s\+"Dipstick /;"	kind:v
+dragpad-version	dipstick.rc	/IDS_DRAGPAD_TITLE\s\+" Dipstick /;"	kind:v
+help-license-date	./help/dipstick.xml	/<license\s/;"	kind:d
+help-news	./help/dipstick.xml	/<newsfor\s/
+install-version	./install/install.cpp	/^#define\s\+VERSION\s\+"/;"	kind:v
+install-vsinfo-date	install/install.rc	/^\s\+VALUE\s\+"LegalCopyright",/;"	kind:d
+install-vsinfo-numeric-version	install/install.rc	/^\s\+FILEVERSION\s\+/;"	kind:v
+install-vsinfo-string-version	install/install.rc	/^\s\+VALUE\s\+"FileVersion",/;"	kind:v
+license-date	COPYING	:1;"	kind:d
+vsinfo-date	dipstick.rc	/VALUE\s\+"LegalCopyright",/;"	kind:d
+vsinfo-numeric-version	dipstick.rc	/^\s\+FILEVERSION\s\+/;"	kind:v
+vsinfo-string-version	dipstick.rc	/^\s\+VALUE\s\+"FileVersion",/;"	kind:v

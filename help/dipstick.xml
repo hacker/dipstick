@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<winhelp>
+ <topic id="About" title="About Dipstick" keywords="about">
+  <heading scroll="no">About <kin>Dipstick</kin></heading>
+  <p><kin>Dipstick</kin> is our award-winning freeware that allows you to evaluate <term>mirror sites</term> to figure out which one has currently the least traffic.</p>
+  <p/>
+  <p><b><i>Enjoy!</i></b></p>
+  <license years="1996, 1997, 1998, 2002"/>
+  <credits/>
+ </topic>
+ <topic id="News" title="What's new">
+  <heading scroll="no">What's New</heading>
+  <newsfor version="3.00" date="August 19st, 2002">
+   <ni>Change of <a href="#About">license</a> and opening the source.</ni>
+   <ni>Minor cosmetic changes</ni>
+  </newsfor>
+  <newsfor version="2.52" date="June 3rd, 1998">
+   <ni>Now works properly with  Winsock 2 for  Windows95. Also may start working with non-Microsoft  TCP/IP stacks.</ni>
+   <ni>Fixed bug that caused  GPF when removing all  URLs after testing is over and you picked the  URL of your choice.</ni>
+  </newsfor>
+  <newsfor version="2.5" date="December 30th, 1997">
+   <ni>Ability to export/import sets of  URLs.</ni>
+   <ni>Copy  URL menu command in the  Main Window and button in the  Best URL window.</ni>
+   <ni>Multiple URLs dragging or pasting. Works only for  MSIE4 browser.</ni>
+   <ni>Annoying ToolTips removed.</ni>
+  </newsfor>
+  <newsfor version="2.00" date="July 1st, 1997">
+   <ni>Drag'n'drop source added to the  Best URL window.</ni>
+   <ni>Completed/Total URLs counter added to  <kin>Dipstick</kin> drag pad.</ni>
+   <ni>You may now drag'n'drop  URLs from main  <kin>Dipstick</kin> dialog window.</ni>
+   <ni>Added ability to paste URLs into  <kin>Dipstick</kin> instead of dropping.</ni>
+   <ni>New install program now lets you install  <kin>Dipstick</kin> to the location of your choice.</ni>
+  </newsfor>
+  <newsfor version="1.01" date="March 13th, 1997">
+   <ni>Resizable main <kin>Dipstick</kin> dialog window.</ni>
+   <ni>Come up with the best URL automatically.</ni>
+   <ni>Workaround for redir.dll</ni>
+   <ni>No more <product>MSIE</product> 3.0 requirement.</ni>
+   <ni>Remembers window positions and size as well as columns widths.</ni>
+   <ni>When manually adding locations - you may specify the URL, not host name as it was before (I still wonder how it came to my mind)</ni>
+  </newsfor>
+ </topic>
+ <topic id="Using" title="Using Dipstick">
+  <heading scroll="no">Using <kin>Dipstick</kin></heading>
+  <p>To use <kin>Dipstick</kin>, please follow these steps:</p>
+  <ul>
+   <li>Load the page that contains links into your <product>MSIE</product> or <product>Netscape</product> browser.</li>
+   <li>Drag'n'drop desired links to <kin>Dipstick</kin> window.</li>
+   <li><a name="UsingManual"/>(Optional) you can also manually add as many links as you want by selecting <b>Manual Ping</b> option. You can enter <term>url</term>, <term>hostname</term> or <term>IP address</term> there.</li>
+   <li>You will see rain going thought <kin>Dipstick</kin> window. After the rain stops, <kin>Dipstick</kin> will show you results either by suggesting the best URL or by sorting results in a table (which can be viewed by clicking on <kin>Dipstick</kin> window).</li>
+   <li>After you are done, you can reping all selected URLs by clicking <a href="#MainWindowRA"><b>Reping All</b></a> button in <kin>Dipstick</kin> window.</li>
+  </ul>
+  <note>Small note for newbies (all others, please do not get mad): To drag'n'drop the URL, you need to move your mouse to the link on the web page, press and hold the select (usually - left) mouse button, and drag the mouse (with the selected URL to <kin>Dipstick</kin> window and then release mouse button.</note>
+ </topic>
+ <topic id="MainWindow" title="Main Window">
+  <heading scroll="no">Main Window</heading>
+  <p>The main window consists of -</p>
+  <ul>
+   <li><b>Brilliant ListView with the following columns:</b></li>
+    <li>Host Name - host name as it was specified in the URL or resolved from IP address.</li>
+    <li>Host IP address - host IP address as it was specified in the URL or resolved from host name.</li>
+    <li>Min RTT - Minimum Round Trip Time. <kin>Dipstick</kin> sends a few echo requests to remote host and calculates minimum, maximum, and average Round Trip Times. The less the better.</li>
+    <li>Avg RTT - Average Round Trip Time. About the same meaning as in Min RTT, but this is the average one. The less the better. By default locations are sorted by Avg RTT.</li>
+    <li>Max RTT - Maximum Round Trip Time. About the same meaning as in Min RTT and Avg RTT, but this is maximum one. The less the better.</li>
+    <li>Pktloss - Percentage of the requests lost somewhere in the net. The less the better.</li>
+   <li><b>Buttons:</b></li>
+    <li><a name="MainWindowMP"/>Manual Ping - lets you add location manually (usually you just drag'n'drop locations into <kin>Dipstick</kin> window.</li>
+    <li>Reping - Test selected location again.</li>
+    <li><a name="MainWindowRA"/>Reping All - Test again all locations in the list.</li>
+    <li>Remove - Remove selected location from the list.</li>
+    <li>Remove All - Remove all locations from the list.</li>
+    <li>Help - I think you have a clue on what this button does.</li>
+    <li>Options - Set <kin>Dipstick</kin> options</li>
+    <li>Exit Dipstick - Close <kin>Dipstick</kin> program</li>
+  </ul>
+ </topic>
+ <topic id="Options" title="Dipstick Options">
+  <heading scroll="no"><kin>Dipstick</kin> Opions</heading>
+  <p>Options are:</p>
+  <ul>
+   <li><a name="OptionsPPH"/><b>Number of pings per host</b> - number of echo requests to send for each location.</li>
+   <li><b>Maximum number of threads</b> - number of locations to process at the same time. adjust this if you have unusually fast or slow connection and/or computer.</li>
+   <li><b>Ping Timeout</b> - number of seconds to wait between sending echo requests.</li>
+   <li><b>Interval between pings</b> - number of seconds to wait between sending echo requests.</li>
+   <li><b>Ping size</b> - number of bytes to send in each echo request.</li>
+   <li><a name="OptionsIM"/><b>Test innermost URL</b> - in case of nesting <b>redir</b>ed URLs test the innermost one. Some strange companies refer to their mirrors using <b>redir.dll</b> so that the URLs for files located on different machines look like they're all here. Like <b>http://www.punchcards.com/redir.dll?target=http://www.punchcards.mirrordudes.com/file.exe&amp;puchcards=advanced</b></li>
+   <li><a name="OptionsBU"/><b>Come up with the best URL</b> - pop up with a suggestion about the best URL (after all locations have been pinged and have nothing left to do other than to start dowloading).</li>
+  </ul>
+ </topic>
+ <topic id="Properties" title="URL properties">
+  <heading scroll="no">URL Properties</heading>
+  <p>URL Properties are:</p>
+  <ul>
+   <li><b>URL</b> - the URL itself if present.</li>
+   <li><b>Host name</b> - host name as specified in URL (or the innermost URL in case of <b>redir</b>ed URLs in the <a href="#OptionsIM">appropriate option</a> is turned on or resolved by <kin>Dipstick</kin>.</li>
+   <li><b>Ping times</b> - minimum, average, and mmaximum round trip times if available.</li>
+   <li><b>Packet loss</b> - percentage of packets lost in transmission.</li>
+   <li><b>Status</b> - description of last error occured (if any).</li>
+  </ul>
+ </topic>
+ <topic id="SelectURLs" title="Select URLs Dialog">
+  <heading scroll="no">Select URLs dialog</heading>
+  <p>If you're dragging or cut'n'pasting selection from <product>MSIE4</product> browser, you're supposed to chose which URLs to test.</p>
+  <p>There are two options you may want to change when selecting URLs from list:</p>
+  <ul>
+   <li><b>Smart adjust selection</b> - let <kin>Dipstick</kin> adjust current selection when you're clicking URL based on the URL you click.</li>
+   <li><b>Adjusst by innermost URL</b> - use the innermost URL when adjusting selection.</li>
+  </ul>
+  <p>The default values for these options are also available from the <a href="#Options"><b>Options</b></a> dialog box.</p>
+ </topic>
+ <topic id="Autobest" title="Dipstick Report">
+  <heading scroll="no"><kin>Dipstick</kin> report</heading>
+  <p>When <kin>Dipstick</kin> has finished testing and there's nothing left but to start your download, you're presented with a suggestion about the best URL. From this dialog you may chose to browse to the location you like using <b>Previous Location</b> and <b>Next Location</b> buttons, <b>Open this URL</b>, <b>Copy URL</b> to clipboard or drag it to wherever you want.</p>
+ </topic>
+</winhelp>

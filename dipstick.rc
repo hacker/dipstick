@@ -1,0 +1,567 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\Dipstick.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Dipstick.ico"
+IDI_PINGING             ICON    DISCARDABLE     "res\\pinging.ico"
+IDI_PENDING             ICON    DISCARDABLE     "res\\pending.ico"
+IDI_COMPLETED           ICON    DISCARDABLE     "res\\complete.ico"
+IDI_UNREACHABLE         ICON    DISCARDABLE     "res\\unreach.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 213, 61
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Dipstick"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,20
+    LTEXT           "Dipstick, Version 3.00",IDC_STATIC,40,7,89,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright © 1996,1997,1998,2002 Klever Group",
+                    IDC_STATIC,40,25,166,8
+    DEFPUSHBUTTON   "OK",IDOK,174,7,32,14,WS_GROUP
+    PUSHBUTTON      "http://www.klever.net/",IDC_KLEVERNET,40,40,91,14
+END
+
+IDD_DIPSTICK_DIALOG DIALOGEX 0, 0, 419, 152
+STYLE DS_3DLOOK | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_CLIENTEDGE | WS_EX_CONTEXTHELP | 
+    WS_EX_APPWINDOW
+CAPTION "  Dipstick 3.00"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_HOSTLIST,"SysListView32",LVS_REPORT | 
+                    LVS_SORTASCENDING | LVS_AUTOARRANGE | WS_BORDER | 
+                    WS_TABSTOP,8,8,349,136,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "&Manual Ping",IDC_MANUALPING,361,8,50,14
+    PUSHBUTTON      "&Reping",IDC_REPING,361,23,50,14,WS_DISABLED
+    PUSHBUTTON      "Reping &All",IDC_REPINGALL,361,38,50,14,WS_DISABLED
+    PUSHBUTTON      "R&emove",IDC_REMOVE,361,53,50,14,WS_DISABLED
+    PUSHBUTTON      "Remove A&ll",IDC_CLEAR,361,68,50,14,WS_DISABLED
+    PUSHBUTTON      "&Help",ID_HELP,361,99,50,14
+    PUSHBUTTON      "&Options",IDC_OPTIONS,361,114,50,14
+    PUSHBUTTON      "E&xit Dipstick",IDC_EXIT,361,129,50,14
+    PUSHBUTTON      "",IDCANCEL,411,2,6,6,NOT WS_VISIBLE | WS_DISABLED
+    PUSHBUTTON      "Ad&vanced",IDC_ADVANCED,361,83,50,11
+END
+
+IDD_DRAGPAD DIALOGEX 0, 0, 53, 33
+STYLE DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_CLIENTEDGE | WS_EX_CONTEXTHELP
+CAPTION " Drag URL here"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Animate1",IDC_DNDTARGET,"SysAnimate32",WS_TABSTOP,0,0,
+                    53,33
+    PUSHBUTTON      "",IDCANCEL,49,0,6,6,NOT WS_VISIBLE | WS_DISABLED
+    DEFPUSHBUTTON   "",IDOK,47,27,6,6,NOT WS_VISIBLE | WS_DISABLED
+END
+
+IDD_OPTIONS DIALOGEX 0, 0, 179, 154
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_CLIENTEDGE | WS_EX_CONTEXTHELP
+CAPTION "Dipstick Options"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Number of pings per &host",IDC_STATIC,50,9,122,10
+    EDITTEXT        IDC_NPINGS,7,7,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPINPINGS,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,31,7,11,14
+    LTEXT           "&Maximum number of threads",IDC_STATIC,50,23,122,10
+    EDITTEXT        IDC_MAXPINGS,7,21,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPINMAXPINGS,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,31,21,11,14
+    LTEXT           "Ping &timeout",IDC_STATIC,50,37,122,10
+    EDITTEXT        IDC_TIMEOUT,7,35,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPINTIMEOUT,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,31,35,11,14
+    LTEXT           "&Interval between pings",IDC_STATIC,50,51,122,10
+    EDITTEXT        IDC_INTERVAL,7,49,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPINTERVAL,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,31,49,11,14
+    LTEXT           "Ping &size",IDC_STATIC,50,65,122,10
+    EDITTEXT        IDC_PACKETSIZE,7,63,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPINSIZE,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,31,63,11,14
+    CONTROL         "Test i&nnermost URL",IDC_MSWORKAROUND,"Button",
+                    BS_AUTOCHECKBOX | BS_NOTIFY | WS_TABSTOP,7,80,165,8
+    DEFPUSHBUTTON   "OK",IDOK,31,133,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,97,133,50,14
+    CONTROL         "Come up with the &best URL",IDC_AUTOBEST,"Button",
+                    BS_AUTOCHECKBOX | BS_NOTIFY | WS_TABSTOP,16,90,156,8
+    CONTROL         "When selecting URLs, enable smart adjust",
+                    IDC_SMARTADJUST,"Button",BS_AUTOCHECKBOX | BS_NOTIFY | 
+                    WS_TABSTOP,7,100,165,8
+    CONTROL         "When smart-adjusting, use innermost URL",IDC_ADJUSTINN,
+                    "Button",BS_AUTOCHECKBOX | BS_NOTIFY | WS_TABSTOP,16,110,
+                    156,8
+    CONTROL         "Ignore relative URLs when dragging selection.",
+                    IDC_IGNORELA,"Button",BS_AUTOCHECKBOX | BS_NOTIFY | 
+                    WS_TABSTOP,7,120,165,8
+END
+
+IDD_MANUALHOST DIALOGEX 0, 0, 187, 54
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_CLIENTEDGE
+CAPTION " Manually Test Host"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Enter &URL, host name or ip address:",IDC_STATIC,7,7,
+                    129,8
+    EDITTEXT        IDC_HOST,7,16,173,14,ES_LOWERCASE | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,35,33,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,101,33,50,14
+END
+
+IDD_PROPS DIALOGEX 0, 0, 209, 99
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_CLIENTEDGE
+CAPTION " Properties"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,152,78,50,14
+    LTEXT           "URL:",IDC_URLCAPTION,7,7,18,8,SS_NOTIFY
+    LTEXT           "..",IDC_URL,60,7,142,8,SS_NOPREFIX | SS_NOTIFY
+    LTEXT           "Host name:",IDC_HOSTCAPTION,7,17,37,8,SS_NOTIFY
+    LTEXT           "..",IDC_HOST,60,17,142,8,SS_NOPREFIX | SS_NOTIFY
+    LTEXT           "IP:",IDC_IPCAPTION,7,27,10,8,SS_NOTIFY
+    LTEXT           "..",IDC_IP,60,27,142,8,SS_NOTIFY
+    LTEXT           "Ping times (min/avg/max):",IDC_TIMESCAPTION,7,37,53,17,
+                    SS_NOTIFY
+    LTEXT           "../../..",IDC_TIMES,60,45,66,8,SS_NOTIFY
+    LTEXT           "Packet loss:",IDC_LOSSCAPTION,7,56,40,8,SS_NOTIFY
+    LTEXT           "..",IDC_LOSS,60,56,66,8,SS_NOPREFIX | SS_NOTIFY
+    LTEXT           "Status:",IDC_STATUSCAPTION,7,66,23,8,SS_NOTIFY
+    LTEXT           "..",IDC_STATUS,60,66,142,8,SS_NOPREFIX | SS_NOTIFY
+    PUSHBUTTON      "&Open URL",IDC_OPENURL,7,78,50,14
+    ICON            IDR_MAINFRAME,IDC_STATE,166,42,18,20,SS_NOTIFY | 
+                    SS_CENTERIMAGE | SS_REALSIZEIMAGE
+    PUSHBUTTON      "&Copy URL",IDC_COPYURL,60,78,50,14
+END
+
+IDD_AUTOBEST DIALOGEX 0, 0, 287, 82
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_POPUP | 
+    WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_CLIENTEDGE
+CAPTION "  Dipstick - report"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Open this URL",IDOK,110,47,68,14
+    PUSHBUTTON      "&Next Location",IDC_NEXT,188,47,68,14
+    PUSHBUTTON      "&Previous Location",IDC_PREV,32,47,68,14
+    CTEXT           "..",IDC_URL,7,7,273,14,SS_NOPREFIX,WS_EX_DLGMODALFRAME | 
+                    WS_EX_CLIENTEDGE
+    LTEXT           "Average Response Time, milliseconds:",IDC_STATIC,7,25,
+                    136,8
+    LTEXT           "..",IDC_RTT,143,25,68,8
+    LTEXT           "Packet Loss:",IDC_STATIC,7,36,136,8
+    LTEXT           "..",IDC_PKTLOSS,143,36,68,8
+    PUSHBUTTON      "Cancel",IDCANCEL,118,63,50,12
+    CONTROL         "Animate1",IDC_DROPSOURCE,"SysAnimate32",ACS_CENTER | 
+                    ACS_AUTOPLAY,257,23,23,22,WS_EX_DLGMODALFRAME | 
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "&Copy URL",IDC_COPYURL,211,23,39,22,BS_CENTER | 
+                    BS_VCENTER | BS_MULTILINE
+END
+
+IDD_URLS DIALOGEX 0, 0, 176, 192
+STYLE DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_MAXIMIZEBOX | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_CLIENTEDGE
+CAPTION "  Select URLs of interest"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_URLS,7,7,162,146,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    LBS_EXTENDEDSEL | NOT WS_BORDER | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP,WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "OK",IDOK,7,155,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,7,171,50,14
+    CONTROL         "&Smart adjust selection",IDC_DOADJUST,"Button",
+                    BS_AUTOCHECKBOX | BS_TOP | WS_TABSTOP,63,157,106,10
+    CONTROL         "Adjust by &innermost URL",IDC_ADJUSTINN,"Button",
+                    BS_AUTOCHECKBOX | BS_TOP | BS_MULTILINE | WS_TABSTOP,63,
+                    175,106,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 3,0,0,0
+ PRODUCTVERSION 3,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x9L
+#else
+ FILEFLAGS 0x8L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Klever Group (http://www.klever.net/)\0"
+            VALUE "FileDescription", "Dipstick, mirror locator\0"
+            VALUE "FileVersion", "3, 0, 0, 0\0"
+            VALUE "InternalName", "DIPSTICK\0"
+            VALUE "LegalCopyright", "Copyright © 1996, 1997, 1998, 2002 Klever Group (http://www.klever.net/)\0"
+            VALUE "LegalTrademarks", "Klever Group (http://www.klever.net/)\0"
+            VALUE "OriginalFilename", "DIPSTICK.EXE\0"
+            VALUE "ProductName", "Dipstick\0"
+            VALUE "ProductVersion", "3, 0, 0, 0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        VERTGUIDE, 40
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 54
+    END
+
+    IDD_DIPSTICK_DIALOG, DIALOG
+    BEGIN
+        VERTGUIDE, 8
+        VERTGUIDE, 411
+        HORZGUIDE, 8
+        HORZGUIDE, 144
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 172
+        VERTGUIDE, 16
+        VERTGUIDE, 50
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_MANUALHOST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 47
+    END
+
+    IDD_PROPS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 202
+        VERTGUIDE, 60
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 92
+    END
+
+    IDD_AUTOBEST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 280
+        VERTGUIDE, 143
+        VERTGUIDE, 211
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+        HORZGUIDE, 25
+        HORZGUIDE, 44
+    END
+
+    IDD_URLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 169
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 185
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AVI
+//
+
+IDR_DNDAVI              AVI     DISCARDABLE     "res\\kdnd.avi"
+IDR_DRAGAVI             AVI     DISCARDABLE     "res\\kdragurl.avi"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "Drag pad"
+    BEGIN
+        MENUITEM "&Manual Ping",                ID_DRAGPAD_MANUALPING
+        MENUITEM "&Paste URL(s)",               ID_DRAGPAD_PASTEURL
+        MENUITEM "Reping &All",                 ID_DRAGPAD_REPINGALL
+        MENUITEM "Remove A&ll",                 ID_DRAGPAD_REMOVEALL
+        MENUITEM SEPARATOR
+        MENUITEM "&Options",                    ID_DRAGPAD_OPTIONS
+        MENUITEM "&Show main window",           ID_DRAGPAD_SHOWMAINWINDOW
+        POPUP "Ad&vanced"
+        BEGIN
+            MENUITEM "&Export List",                ID_DRAGPAD_ADVANCED_EXPORTLIST
+
+            MENUITEM "&Import List",                ID_DRAGPAD_ADVANCED_IMPORTLIST
+
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Help",                       ID_DRAGPAD_HELP
+        MENUITEM "A&bout Dipstick",             ID_DRAGPAD_ABOUT
+        MENUITEM "E&xit Dipstick",              ID_DRAGPAD_EXIT
+    END
+    POPUP "Host List"
+    BEGIN
+        MENUITEM "&Reping",                     ID_HOSTLIST_REPING
+        MENUITEM "R&emove",                     ID_HOSTLIST_REMOVE
+        MENUITEM "Open URL",                    ID_HOSTLIST_OPENURL
+        MENUITEM "&Copy URL",                   ID_HOSTLIST_COPYURL
+        MENUITEM SEPARATOR
+        MENUITEM "Reping &All",                 ID_HOSTLIST_REPINGALL
+        MENUITEM "Remove A&ll",                 ID_HOSTLIST_REMOVEALL
+        MENUITEM SEPARATOR
+        MENUITEM "&Paste URL(s)",               ID_HOSTLIST_PASTEURL
+        MENUITEM "&Properties",                 ID_HOSTLIST_PROPERTIES
+    END
+    POPUP "Advanced"
+    BEGIN
+        MENUITEM "&Export List",                ID_ADVANCED_EXPORTLIST
+        MENUITEM "&Import List",                ID_ADVANCED_IMPORTLIST
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_DIABACK             BITMAP  DISCARDABLE     "shared-data/klever-background.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDW_BESTURL             WAVE    DISCARDABLE     "res\\best.wav"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About Dipstick.."
+    IDS_PS_FAILEDTOLOCK     "Failed to gain access to internal resources. Please, report to Klever."
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+    IDS_CSVEXT              ".csv"
+    IDS_HN_BADURL           "Bad URL"
+    IDS_ABEST_CLEANUP       "Remove all locations from list?"
+    IDS_ABEST_NONEFOUND     "No reachable locations were found."
+    IDS_ABEST_TITLE         "  Dipstick - report"
+    IDS_DRAGPAD_TITLE       " Dipstick 3.00"
+    IDS_DRAGPAD_URLS        "  %d/%d URL(s)"
+    IDS_REGEX_HTMLURL       "<A[^[:alpha:]][^>]*href[[:space:]]*=[[:space:]]*""?([^[:space:]>""]+)""?[^>]*>"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_KLEVERNET_URL       "http://www.klever.net/"
+    IDS_PS_INTERNALERROR    "Internal Error. Please report to Klever."
+    IDS_PS_NETUNREACHABLE   "Destination network unreachable"
+    IDS_PS_HOSTUNREACHABLE  "Destination host unreachable"
+    IDS_PS_PROTUNREACHABLE  "Destination protocol unreachable"
+    IDS_PS_PORTUNREACHABLE  "Destination port unreachable"
+    IDS_PS_NORESOURCES      "No resources"
+    IDS_PS_HWERROR          "Hardware error"
+    IDS_PS_BIGPACKET        "Packet size is too big"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_DNDTARGET           "Dipstick 3.00, click the right mouse button to display main window, left mouse button for menu"
+    IDC_HOST                "Host name as specified or resolved by Dipstick"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_URLCAPTION          "Universal Resource Locator (URL) associated with this location"
+    IDC_URL                 "Universal Resource Locator (URL) associated with this location"
+    IDC_HOSTCAPTION         "Host name as specified or resolved by Dipstick"
+    IDC_IPCAPTION           "Host's IP address as specified or resolved by Dipstick"
+    IDC_TIMESCAPTION        "Minmum, maximum and average round trip time in milliseconds. The less the better."
+    IDC_TIMES               "Minmum, maximum and average round trip time in milliseconds. The less the better."
+    IDC_LOSSCAPTION         "IP packets loss"
+    IDC_LOSS                "IP packets loss"
+    IDC_STATUSCAPTION       "Last error occured during attempt to ping this location"
+    IDC_STATUS              "Last error occured during attempt to ping this location"
+    IDC_OPENURL             "Open URL in your default browser"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PS_TIMEOUT          "Request timed out"
+    IDS_PS_BADROUTE         "Bad route"
+    IDS_PS_TTLEXPTRANSIT    "TTL expired in transit"
+    IDS_PS_TTLEXPREASM      "TTL expired during reassembly"
+    IDS_PS_IPARAMP          "IP parameter problem"
+    IDS_PS_SOURCEQUENCH     "Source quench received"
+    IDS_PS_BIGOPTION        "Option is too big"
+    IDS_PS_BADDEST          "Bad destination"
+    IDS_PS_UNKNOWNERROR     "Unknown error"
+    IDS_REGISTRYKEY         "Klever Group, Inc."
+    IDS_FMT_TIMES           "%lu/%lu/%lu"
+    IDS_FMT_LOSS            "%d%%"
+    IDS_TIP_UNREACHABLE     "This location seems to be unreachable"
+    IDS_PS_FAILEDTORESOLVE  "Unable to resolve host IP"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PS_UNABLETOICMP     "Unable to initialize ICMP services"
+    IDS_TIP_PENDING         "This location is waiting for it's turn to get pinged"
+    IDS_TIP_COMPLETE        "Pinging of this location has been completed"
+    IDS_TIP_PROPSOK         "Click OK if you're done with looking and want to dismiss this window"
+    IDS_TIP_INTERVAL        "Interval between ping requests in seconds"
+    IDS_TIP_OPTIONSOK       "Click OK to make changes permanent"
+    IDS_TIP_OPTIONSCANCEL   "Click CANCEL to leave dialog without making any changes"
+    IDS_TIP_PINGING         "This location is being pinged at the moment.."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_MSWORKAROUND        "In case of REDIRed URL - test the innermost one"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CSVFILTER           "Comma Separated Values (*.csv)|*.csv|All Files (*.*)|*.*||"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\Dipstick.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
