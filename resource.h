@@ -19,6 +19,7 @@
 #define IDS_DRAGPAD_URLS                110
 #define IDS_REGEX_HTMLURL               111
 #define IDS_CSVFILTER                   112
+#define IDS_REGEX_URL                   113
 #define IDR_MAINFRAME                   128
 #define IDD_DRAGPAD                     129
 #define IDR_DNDAVI                      130

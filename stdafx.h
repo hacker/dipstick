@@ -29,7 +29,8 @@ enum	{
 	WM_DNP_ACTIVITYCOUNT = WM_USER+16,
 	WM_DNP_URLPING,
 	WM_DNP_UPDATEHOSTDATA,
-	WM_DNP_HTML
+	WM_DNP_HTML,
+	WM_DNP_URLSPING
 };
 #include <MMSystem.h>
 // CG: The following line was added by the Windows Multimedia component.

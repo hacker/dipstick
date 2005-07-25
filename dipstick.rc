@@ -82,10 +82,9 @@ CAPTION "About Dipstick"
 FONT 8, "MS Sans Serif"
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,20
-    LTEXT           "Dipstick, Version 3.0",IDC_STATIC,40,7,89,8,
-                    SS_NOPREFIX
-    LTEXT           "Copyright © 1996-2004 Klever Group",
-                    IDC_STATIC,40,25,166,8
+    LTEXT           "Dipstick, Version 3.1-trunk",IDC_STATIC,40,7,89,8,SS_NOPREFIX
+    LTEXT           "Copyright © 1996-2005 Klever Group",IDC_STATIC,40,25,
+                    166,8
     DEFPUSHBUTTON   "OK",IDOK,174,7,32,14,WS_GROUP
     PUSHBUTTON      "http://www.klever.net/",IDC_KLEVERNET,40,40,91,14
 END
@@ -94,7 +93,7 @@ IDD_DIPSTICK_DIALOG DIALOGEX 0, 0, 419, 152
 STYLE DS_3DLOOK | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
 EXSTYLE WS_EX_TOOLWINDOW | WS_EX_CLIENTEDGE | WS_EX_CONTEXTHELP | 
     WS_EX_APPWINDOW
-CAPTION "  Dipstick 3.0"
+CAPTION "  Dipstick 3.1-trunk"
 FONT 8, "MS Sans Serif", 0, 0, 0x1
 BEGIN
     CONTROL         "List1",IDC_HOSTLIST,"SysListView32",LVS_REPORT | 
@@ -263,8 +262,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 3,0,0,0
- PRODUCTVERSION 3,0,0,0
+ FILEVERSION 3,1,0,0
+ PRODUCTVERSION 3,1,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x9L
@@ -281,13 +280,13 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Klever Group (http://www.klever.net/)\0"
             VALUE "FileDescription", "Dipstick, mirror locator\0"
-            VALUE "FileVersion", "3, 0, 0, 0\0"
+            VALUE "FileVersion", "3, 1, 0, 0\0"
             VALUE "InternalName", "DIPSTICK\0"
-            VALUE "LegalCopyright", "Copyright © 1996-2004 Klever Group (http://www.klever.net/)\0"
+            VALUE "LegalCopyright", "Copyright © 1996-2005 Klever Group (http://www.klever.net/)\0"
             VALUE "LegalTrademarks", "Klever Group (http://www.klever.net/)\0"
             VALUE "OriginalFilename", "DIPSTICK.EXE\0"
             VALUE "ProductName", "Dipstick\0"
-            VALUE "ProductVersion", "3, 0, 0, 0\0"
+            VALUE "ProductVersion", "3, 1, 0, 0\0"
         END
     END
     BLOCK "VarFileInfo"
@@ -460,7 +459,7 @@ BEGIN
     IDS_ABEST_CLEANUP       "Remove all locations from list?"
     IDS_ABEST_NONEFOUND     "No reachable locations were found."
     IDS_ABEST_TITLE         "  Dipstick - report"
-    IDS_DRAGPAD_TITLE       " Dipstick 3.0"
+    IDS_DRAGPAD_TITLE       " Dipstick 3.1-trunk"
     IDS_DRAGPAD_URLS        "  %d/%d URL(s)"
     IDS_REGEX_HTMLURL       "<A[^[:alpha:]][^>]*href[[:space:]]*=[[:space:]]*""?([^[:space:]>""]+)""?[^>]*>"
 END
@@ -480,7 +479,7 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDC_DNDTARGET           "Dipstick 3.0, click the right mouse button to display main window, left mouse button for menu"
+    IDC_DNDTARGET           "Dipstick 3.1-trunk, click the right mouse button to display main window, left mouse button for menu"
     IDC_HOST                "Host name as specified or resolved by Dipstick"
 END
 
@@ -537,6 +536,7 @@ END
 STRINGTABLE DISCARDABLE 
 BEGIN
     IDS_CSVFILTER           "Comma Separated Values (*.csv)|*.csv|All Files (*.*)|*.*||"
+    IDS_REGEX_URL           "([a-zA-Z]+://)?[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]*)+(/[^ \t\r\n\\f]*)?"
 END
 
 #endif    // English (U.S.) resources

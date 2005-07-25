@@ -43,6 +43,8 @@ class CDipstickDlg : public CDialog
 		CCrackURL src;
 	};
 public:
+	LRESULT OnURLSPing(WPARAM wP,LPARAM lP);
+	CRegEx m_reURL;
 	BOOL ExportLocations(LPCTSTR file);
 	CString m_impexPath;
 	BOOL ImportLocations(LPCTSTR file);

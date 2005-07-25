@@ -105,6 +105,8 @@ WORD hi,lo;
 CString tmp;
 	VERIFY(tmp.LoadString(IDS_REGEX_HTMLURL));
 	VERIFY(m_reHTMLURL.Compile(tmp,CRegEx::regExtended|CRegEx::regIgnoreCase));
+	VERIFY(tmp.LoadString(IDS_REGEX_URL));
+	VERIFY(m_reURL.Compile(tmp,CRegEx::regExtended|CRegEx::regIgnoreCase));
 }
 
 CDipstickDlg::~CDipstickDlg()
@@ -135,6 +137,7 @@ BEGIN_MESSAGE_MAP(CDipstickDlg, CDialog)
 	ON_WM_QUERYDRAGICON()
 	ON_WM_DESTROY()
 	ON_BN_CLICKED(IDC_OPTIONS, OnOptions)
+	ON_MESSAGE(WM_DNP_URLSPING, OnURLSPing)
 	ON_MESSAGE(WM_DNP_URLPING, OnUrlPing)
 	ON_MESSAGE(WM_DNP_ACTIVITYCOUNT, OnActivityCount)
 	ON_MESSAGE(WM_DNP_UPDATEHOSTDATA, OnUpdateHostData)
@@ -1185,6 +1188,7 @@ UINT	cfNIF = RegisterClipboardFormat("Netscape Image Format");
 				delete xf;
 			}else{
 				PostMessage(WM_DNP_HTML,0,(LPARAM)xf);
+				rv = TRUE;
 			}
 		}while(FALSE);
 		GlobalUnlock(hg);
@@ -1210,16 +1214,28 @@ UINT	cfNIF = RegisterClipboardFormat("Netscape Image Format");
 		return TRUE;
 	}
 	if(pDO->IsDataAvailable(CF_TEXT)){
-		if(!bTestOnly){
-		HGLOBAL hg = pDO->GetGlobalData(CF_TEXT);
-			ASSERT(hg);
-		LPVOID lpv = GlobalLock(hg);
-			ASSERT(lpv);
-			PostMessage(WM_DNP_URLPING,0,(LPARAM)new CString((LPCTSTR)lpv));
-			GlobalUnlock(hg);
-			GlobalFree(hg);
+	BOOL rv = FALSE;
+	HGLOBAL hg = pDO->GetGlobalData(CF_TEXT);
+		ASSERT(hg);
+	LPVOID lpv = GlobalLock(hg);
+		ASSERT(lpv);
+		if(bTestOnly){
+			rv = m_reURL.Match((LPCSTR)lpv);
+		}else{
+			CString sel = (LPCSTR)lpv;
+			if(m_reURL.Match(sel)) {
+				rv = TRUE;
+				CString tmp = m_reURL.GetMatch(CRegEx::matchPostMatch);
+				if(m_reURL.Match(tmp)) {
+					 PostMessage(WM_DNP_URLSPING,0,(LPARAM)new CString((LPCSTR)lpv));
+				}else{
+					PostMessage(WM_DNP_URLPING,0,(LPARAM)new CString((LPCTSTR)lpv));
+				}
+			}
 		}
-		return TRUE;
+		GlobalUnlock(hg);
+		GlobalFree(hg);
+		return rv;
 	}
 	return FALSE;
 }
@@ -1247,6 +1263,32 @@ CSelectURLsDlg su;
 	}
 	EndWaitCursor();
 	delete xf;
+	if(su.DoModal()==IDOK){
+	POSITION p = su.m_URLs.GetHeadPosition();
+		while(p){
+		CString url = su.m_URLs.GetNext(p);
+			PostMessage(WM_DNP_URLPING,0,(LPARAM)new CString(url));
+		}
+	}
+	return 0;
+}
+
+LRESULT CDipstickDlg::OnURLSPing(WPARAM wP,LPARAM lP)
+{
+CString *sel = (CString*)lP;
+TRACE1("URLS: %s\n",(LPCTSTR)*sel);
+CSelectURLsDlg su;
+	su.m_bAdjust = m_bSmartAdjust;
+	su.m_bAdjustInnermost = m_bAdjustInnermost;
+	BeginWaitCursor();
+	while(m_reURL.Match(*sel)){
+	CString url = m_reURL.GetMatch(CRegEx::matchMatch);
+		(*sel) = m_reURL.GetMatch(CRegEx::matchPostMatch);
+		if(!su.m_URLs.Find(url))
+			VERIFY(su.m_URLs.AddTail(url));
+	}
+	EndWaitCursor();
+	delete sel;
 	if(su.DoModal()==IDOK){
 	POSITION p = su.m_URLs.GetHeadPosition();
 		while(p){

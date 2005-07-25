@@ -3,7 +3,7 @@
 
 #define KINNAME "Dipstick"
 #define KINSHORT KINNAME
-#define VERSION "3.0"
+#define VERSION "3.1-trunk"
 
 BOOL Install(void)
 {
