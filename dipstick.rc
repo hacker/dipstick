@@ -82,7 +82,7 @@ CAPTION "About Dipstick"
 FONT 8, "MS Sans Serif"
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,20
-    LTEXT           "Dipstick, Version 3.1-trunk",IDC_STATIC,40,7,89,8,SS_NOPREFIX
+    LTEXT           "Dipstick, Version 3.1",IDC_STATIC,40,7,89,8,SS_NOPREFIX
     LTEXT           "Copyright © 1996-2005 Klever Group",IDC_STATIC,40,25,
                     166,8
     DEFPUSHBUTTON   "OK",IDOK,174,7,32,14,WS_GROUP
@@ -93,7 +93,7 @@ IDD_DIPSTICK_DIALOG DIALOGEX 0, 0, 419, 152
 STYLE DS_3DLOOK | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
 EXSTYLE WS_EX_TOOLWINDOW | WS_EX_CLIENTEDGE | WS_EX_CONTEXTHELP | 
     WS_EX_APPWINDOW
-CAPTION "  Dipstick 3.1-trunk"
+CAPTION "  Dipstick 3.1"
 FONT 8, "MS Sans Serif", 0, 0, 0x1
 BEGIN
     CONTROL         "List1",IDC_HOSTLIST,"SysListView32",LVS_REPORT | 
@@ -459,7 +459,7 @@ BEGIN
     IDS_ABEST_CLEANUP       "Remove all locations from list?"
     IDS_ABEST_NONEFOUND     "No reachable locations were found."
     IDS_ABEST_TITLE         "  Dipstick - report"
-    IDS_DRAGPAD_TITLE       " Dipstick 3.1-trunk"
+    IDS_DRAGPAD_TITLE       " Dipstick 3.1"
     IDS_DRAGPAD_URLS        "  %d/%d URL(s)"
     IDS_REGEX_HTMLURL       "<A[^[:alpha:]][^>]*href[[:space:]]*=[[:space:]]*""?([^[:space:]>""]+)""?[^>]*>"
 END
@@ -479,7 +479,7 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDC_DNDTARGET           "Dipstick 3.1-trunk, click the right mouse button to display main window, left mouse button for menu"
+    IDC_DNDTARGET           "Dipstick 3.1, click the right mouse button to display main window, left mouse button for menu"
     IDC_HOST                "Host name as specified or resolved by Dipstick"
 END
 

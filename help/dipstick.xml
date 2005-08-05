@@ -10,8 +10,9 @@
  </topic>
  <topic id="News" title="What's new">
   <heading scroll="no">What's New</heading>
-  <newsfor version="3.1" date="July 26th, 2005">
+  <newsfor version="3.1" date="August 6th, 2005">
    <ni>Ability to parse multiple URLs from plaintext selection</ni>
+   <ni>Fixed uninstall procedure so that it works on XP</ni>
   </newsfor>
   <newsfor version="3.0" date="July 11th, 2004">
    <ni>Change of <a href="#About">license</a> and opening the source.</ni>
