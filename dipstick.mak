@@ -39,9 +39,9 @@ NULL=nul
 ################################################################################
 # Begin Project
 # PROP Target_Last_Scanned "Dipstick - Win32 Release"
+CPP=cl.exe
 RSC=rc.exe
 MTL=mktyplib.exe
-CPP=cl.exe
 
 !IF  "$(CFG)" == "Dipstick - Win32 Release"
 
@@ -646,12 +646,9 @@ LINK32_OBJS= \
 # Begin Source File
 
 SOURCE=.\Dipstick.cpp
-
-!IF  "$(CFG)" == "Dipstick - Win32 Release"
-
 DEP_CPP_DIPST=\
 	".\CrackURL.h"\
-	".\Dipstick.h"\
+	".\dipstick.h"\
 	".\DipstickDlg.h"\
 	".\shared-code\ip_icmp.h"\
 	".\shared-code\kICMP.h"\
@@ -659,6 +656,9 @@ DEP_CPP_DIPST=\
 	".\shared-code\RegEx.h"\
 	".\stdafx.h"\
 	
+
+!IF  "$(CFG)" == "Dipstick - Win32 Release"
+
 
 "$(INTDIR)\Dipstick.obj" : $(SOURCE) $(DEP_CPP_DIPST) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -666,16 +666,6 @@ DEP_CPP_DIPST=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Debug"
 
-DEP_CPP_DIPST=\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\DipstickDlg.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 
 "$(INTDIR)\Dipstick.obj" : $(SOURCE) $(DEP_CPP_DIPST) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -683,16 +673,6 @@ DEP_CPP_DIPST=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Release Static"
 
-DEP_CPP_DIPST=\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\DipstickDlg.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 
 "$(INTDIR)\Dipstick.obj" : $(SOURCE) $(DEP_CPP_DIPST) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -705,13 +685,10 @@ DEP_CPP_DIPST=\
 # Begin Source File
 
 SOURCE=.\DipstickDlg.cpp
-
-!IF  "$(CFG)" == "Dipstick - Win32 Release"
-
 DEP_CPP_DIPSTI=\
 	".\AutoBestDlg.h"\
 	".\CrackURL.h"\
-	".\Dipstick.h"\
+	".\dipstick.h"\
 	".\DipstickDlg.h"\
 	".\DragPad.h"\
 	".\HostNameDlg.h"\
@@ -725,6 +702,9 @@ DEP_CPP_DIPSTI=\
 	".\stdafx.h"\
 	".\URLSource.h"\
 	
+
+!IF  "$(CFG)" == "Dipstick - Win32 Release"
+
 
 "$(INTDIR)\DipstickDlg.obj" : $(SOURCE) $(DEP_CPP_DIPSTI) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -732,23 +712,6 @@ DEP_CPP_DIPSTI=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Debug"
 
-DEP_CPP_DIPSTI=\
-	".\AutoBestDlg.h"\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\DipstickDlg.h"\
-	".\DragPad.h"\
-	".\HostNameDlg.h"\
-	".\HostProperties.h"\
-	".\OptionsDlg.h"\
-	".\SelectURLsDlg.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	".\URLSource.h"\
-	
 
 "$(INTDIR)\DipstickDlg.obj" : $(SOURCE) $(DEP_CPP_DIPSTI) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -756,23 +719,6 @@ DEP_CPP_DIPSTI=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Release Static"
 
-DEP_CPP_DIPSTI=\
-	".\AutoBestDlg.h"\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\DipstickDlg.h"\
-	".\DragPad.h"\
-	".\HostNameDlg.h"\
-	".\HostProperties.h"\
-	".\OptionsDlg.h"\
-	".\SelectURLsDlg.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	".\URLSource.h"\
-	
 
 "$(INTDIR)\DipstickDlg.obj" : $(SOURCE) $(DEP_CPP_DIPSTI) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -785,9 +731,6 @@ DEP_CPP_DIPSTI=\
 # Begin Source File
 
 SOURCE=.\StdAfx.cpp
-
-!IF  "$(CFG)" == "Dipstick - Win32 Release"
-
 DEP_CPP_STDAF=\
 	".\CrackURL.h"\
 	".\shared-code\ip_icmp.h"\
@@ -796,6 +739,9 @@ DEP_CPP_STDAF=\
 	".\shared-code\RegEx.h"\
 	".\stdafx.h"\
 	
+
+!IF  "$(CFG)" == "Dipstick - Win32 Release"
+
 # ADD CPP /Yc"stdafx.h"
 
 BuildCmds= \
@@ -812,14 +758,6 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Debug"
 
-DEP_CPP_STDAF=\
-	".\CrackURL.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 # ADD CPP /Yc"stdafx.h"
 
 BuildCmds= \
@@ -836,14 +774,6 @@ BuildCmds= \
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Release Static"
 
-DEP_CPP_STDAF=\
-	".\CrackURL.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 # ADD BASE CPP /Yc"stdafx.h"
 # ADD CPP /Yc"stdafx.h"
 
@@ -871,10 +801,10 @@ SOURCE=.\dipstick.rc
 DEP_RSC_DIPSTIC=\
 	".\res\best.wav"\
 	".\res\complete.ico"\
-	".\res\Dipstick.ico"\
+	".\res\dipstick.ico"\
 	".\res\dipstick.rc2"\
 	".\res\kdnd.avi"\
-	".\res\Kdragurl.avi"\
+	".\res\kdragurl.avi"\
 	".\res\pending.ico"\
 	".\res\pinging.ico"\
 	".\res\unreach.ico"\
@@ -888,16 +818,16 @@ DEP_RSC_DIPSTIC=\
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Debug"
 
 DEP_RSC_DIPSTIC=\
-	".\res\background.bmp"\
 	".\res\best.wav"\
 	".\res\complete.ico"\
-	".\res\Dipstick.ico"\
+	".\res\dipstick.ico"\
 	".\res\dipstick.rc2"\
 	".\res\kdnd.avi"\
-	".\res\Kdragurl.avi"\
+	".\res\kdragurl.avi"\
 	".\res\pending.ico"\
 	".\res\pinging.ico"\
 	".\res\unreach.ico"\
+	".\shared-data\klever-background.bmp"\
 	
 
 "$(INTDIR)\dipstick.res" : $(SOURCE) $(DEP_RSC_DIPSTIC) "$(INTDIR)"
@@ -907,16 +837,16 @@ DEP_RSC_DIPSTIC=\
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Release Static"
 
 DEP_RSC_DIPSTIC=\
-	".\res\background.bmp"\
 	".\res\best.wav"\
 	".\res\complete.ico"\
-	".\res\Dipstick.ico"\
+	".\res\dipstick.ico"\
 	".\res\dipstick.rc2"\
 	".\res\kdnd.avi"\
-	".\res\Kdragurl.avi"\
+	".\res\kdragurl.avi"\
 	".\res\pending.ico"\
 	".\res\pinging.ico"\
 	".\res\unreach.ico"\
+	".\shared-data\klever-background.bmp"\
 	
 
 "$(INTDIR)\dipstick.res" : $(SOURCE) $(DEP_RSC_DIPSTIC) "$(INTDIR)"
@@ -930,12 +860,9 @@ DEP_RSC_DIPSTIC=\
 # Begin Source File
 
 SOURCE=.\DragPad.cpp
-
-!IF  "$(CFG)" == "Dipstick - Win32 Release"
-
 DEP_CPP_DRAGP=\
 	".\CrackURL.h"\
-	".\Dipstick.h"\
+	".\dipstick.h"\
 	".\DipstickDlg.h"\
 	".\DragPad.h"\
 	".\shared-code\ip_icmp.h"\
@@ -944,6 +871,9 @@ DEP_CPP_DRAGP=\
 	".\shared-code\RegEx.h"\
 	".\stdafx.h"\
 	
+
+!IF  "$(CFG)" == "Dipstick - Win32 Release"
+
 
 "$(INTDIR)\DragPad.obj" : $(SOURCE) $(DEP_CPP_DRAGP) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -951,17 +881,6 @@ DEP_CPP_DRAGP=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Debug"
 
-DEP_CPP_DRAGP=\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\DipstickDlg.h"\
-	".\DragPad.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 
 "$(INTDIR)\DragPad.obj" : $(SOURCE) $(DEP_CPP_DRAGP) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -969,17 +888,6 @@ DEP_CPP_DRAGP=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Release Static"
 
-DEP_CPP_DRAGP=\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\DipstickDlg.h"\
-	".\DragPad.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 
 "$(INTDIR)\DragPad.obj" : $(SOURCE) $(DEP_CPP_DRAGP) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -992,12 +900,9 @@ DEP_CPP_DRAGP=\
 # Begin Source File
 
 SOURCE=.\OptionsDlg.cpp
-
-!IF  "$(CFG)" == "Dipstick - Win32 Release"
-
 DEP_CPP_OPTIO=\
 	".\CrackURL.h"\
-	".\Dipstick.h"\
+	".\dipstick.h"\
 	".\OptionsDlg.h"\
 	".\shared-code\ip_icmp.h"\
 	".\shared-code\kICMP.h"\
@@ -1005,6 +910,9 @@ DEP_CPP_OPTIO=\
 	".\shared-code\RegEx.h"\
 	".\stdafx.h"\
 	
+
+!IF  "$(CFG)" == "Dipstick - Win32 Release"
+
 
 "$(INTDIR)\OptionsDlg.obj" : $(SOURCE) $(DEP_CPP_OPTIO) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1012,16 +920,6 @@ DEP_CPP_OPTIO=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Debug"
 
-DEP_CPP_OPTIO=\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\OptionsDlg.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 
 "$(INTDIR)\OptionsDlg.obj" : $(SOURCE) $(DEP_CPP_OPTIO) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1029,16 +927,6 @@ DEP_CPP_OPTIO=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Release Static"
 
-DEP_CPP_OPTIO=\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\OptionsDlg.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 
 "$(INTDIR)\OptionsDlg.obj" : $(SOURCE) $(DEP_CPP_OPTIO) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1051,12 +939,9 @@ DEP_CPP_OPTIO=\
 # Begin Source File
 
 SOURCE=.\HostNameDlg.cpp
-
-!IF  "$(CFG)" == "Dipstick - Win32 Release"
-
 DEP_CPP_HOSTN=\
 	".\CrackURL.h"\
-	".\Dipstick.h"\
+	".\dipstick.h"\
 	".\HostNameDlg.h"\
 	".\shared-code\ip_icmp.h"\
 	".\shared-code\kICMP.h"\
@@ -1064,6 +949,9 @@ DEP_CPP_HOSTN=\
 	".\shared-code\RegEx.h"\
 	".\stdafx.h"\
 	
+
+!IF  "$(CFG)" == "Dipstick - Win32 Release"
+
 
 "$(INTDIR)\HostNameDlg.obj" : $(SOURCE) $(DEP_CPP_HOSTN) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1071,16 +959,6 @@ DEP_CPP_HOSTN=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Debug"
 
-DEP_CPP_HOSTN=\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\HostNameDlg.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 
 "$(INTDIR)\HostNameDlg.obj" : $(SOURCE) $(DEP_CPP_HOSTN) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1088,16 +966,6 @@ DEP_CPP_HOSTN=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Release Static"
 
-DEP_CPP_HOSTN=\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\HostNameDlg.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 
 "$(INTDIR)\HostNameDlg.obj" : $(SOURCE) $(DEP_CPP_HOSTN) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1110,12 +978,9 @@ DEP_CPP_HOSTN=\
 # Begin Source File
 
 SOURCE=.\HostProperties.cpp
-
-!IF  "$(CFG)" == "Dipstick - Win32 Release"
-
 DEP_CPP_HOSTP=\
 	".\CrackURL.h"\
-	".\Dipstick.h"\
+	".\dipstick.h"\
 	".\DipstickDlg.h"\
 	".\HostProperties.h"\
 	".\shared-code\ip_icmp.h"\
@@ -1124,6 +989,9 @@ DEP_CPP_HOSTP=\
 	".\shared-code\RegEx.h"\
 	".\stdafx.h"\
 	
+
+!IF  "$(CFG)" == "Dipstick - Win32 Release"
+
 
 "$(INTDIR)\HostProperties.obj" : $(SOURCE) $(DEP_CPP_HOSTP) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1131,17 +999,6 @@ DEP_CPP_HOSTP=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Debug"
 
-DEP_CPP_HOSTP=\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\DipstickDlg.h"\
-	".\HostProperties.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 
 "$(INTDIR)\HostProperties.obj" : $(SOURCE) $(DEP_CPP_HOSTP) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1149,17 +1006,6 @@ DEP_CPP_HOSTP=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Release Static"
 
-DEP_CPP_HOSTP=\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\DipstickDlg.h"\
-	".\HostProperties.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 
 "$(INTDIR)\HostProperties.obj" : $(SOURCE) $(DEP_CPP_HOSTP) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1179,7 +1025,7 @@ SOURCE=.\Help\DipStick.hpj
 OutDir=.\Release
 ProjDir=.
 TargetName=dipstick
-InputPath=.\help\dipstick.hpj
+InputPath=.\Help\DipStick.hpj
 
 BuildCmds= \
 	"$(ProjDir)\makehelp.bat" \
@@ -1206,7 +1052,7 @@ BuildCmds= \
 OutDir=.\Debug
 ProjDir=.
 TargetName=dipstick
-InputPath=.\help\dipstick.hpj
+InputPath=.\Help\DipStick.hpj
 
 BuildCmds= \
 	"$(ProjDir)\makehelp.bat" \
@@ -1233,7 +1079,7 @@ BuildCmds= \
 OutDir=.\Releast
 ProjDir=.
 TargetName=dipstick
-InputPath=.\help\dipstick.hpj
+InputPath=.\Help\DipStick.hpj
 
 BuildCmds= \
 	"$(ProjDir)\makehelp.bat" \
@@ -1261,13 +1107,10 @@ BuildCmds= \
 # Begin Source File
 
 SOURCE=.\AutoBestDlg.cpp
-
-!IF  "$(CFG)" == "Dipstick - Win32 Release"
-
 DEP_CPP_AUTOB=\
 	".\AutoBestDlg.h"\
 	".\CrackURL.h"\
-	".\Dipstick.h"\
+	".\dipstick.h"\
 	".\shared-code\ip_icmp.h"\
 	".\shared-code\kICMP.h"\
 	".\shared-code\ms_icmp.h"\
@@ -1275,6 +1118,9 @@ DEP_CPP_AUTOB=\
 	".\stdafx.h"\
 	".\URLSource.h"\
 	
+
+!IF  "$(CFG)" == "Dipstick - Win32 Release"
+
 
 "$(INTDIR)\AutoBestDlg.obj" : $(SOURCE) $(DEP_CPP_AUTOB) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1282,17 +1128,6 @@ DEP_CPP_AUTOB=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Debug"
 
-DEP_CPP_AUTOB=\
-	".\AutoBestDlg.h"\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	".\URLSource.h"\
-	
 
 "$(INTDIR)\AutoBestDlg.obj" : $(SOURCE) $(DEP_CPP_AUTOB) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1300,17 +1135,6 @@ DEP_CPP_AUTOB=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Release Static"
 
-DEP_CPP_AUTOB=\
-	".\AutoBestDlg.h"\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	".\URLSource.h"\
-	
 
 "$(INTDIR)\AutoBestDlg.obj" : $(SOURCE) $(DEP_CPP_AUTOB) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1323,9 +1147,6 @@ DEP_CPP_AUTOB=\
 # Begin Source File
 
 SOURCE=.\URLSource.cpp
-
-!IF  "$(CFG)" == "Dipstick - Win32 Release"
-
 DEP_CPP_URLSO=\
 	".\CrackURL.h"\
 	".\shared-code\ip_icmp.h"\
@@ -1335,6 +1156,9 @@ DEP_CPP_URLSO=\
 	".\stdafx.h"\
 	".\URLSource.h"\
 	
+
+!IF  "$(CFG)" == "Dipstick - Win32 Release"
+
 
 "$(INTDIR)\URLSource.obj" : $(SOURCE) $(DEP_CPP_URLSO) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1342,15 +1166,6 @@ DEP_CPP_URLSO=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Debug"
 
-DEP_CPP_URLSO=\
-	".\CrackURL.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	".\URLSource.h"\
-	
 
 "$(INTDIR)\URLSource.obj" : $(SOURCE) $(DEP_CPP_URLSO) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1358,15 +1173,6 @@ DEP_CPP_URLSO=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Release Static"
 
-DEP_CPP_URLSO=\
-	".\CrackURL.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	".\URLSource.h"\
-	
 
 "$(INTDIR)\URLSource.obj" : $(SOURCE) $(DEP_CPP_URLSO) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1399,9 +1205,6 @@ SOURCE=.\Help\Dipstick.cnt
 # Begin Source File
 
 SOURCE=.\CrackURL.cpp
-
-!IF  "$(CFG)" == "Dipstick - Win32 Release"
-
 DEP_CPP_CRACK=\
 	".\CrackURL.h"\
 	".\shared-code\ip_icmp.h"\
@@ -1410,6 +1213,9 @@ DEP_CPP_CRACK=\
 	".\shared-code\RegEx.h"\
 	".\stdafx.h"\
 	
+
+!IF  "$(CFG)" == "Dipstick - Win32 Release"
+
 
 "$(INTDIR)\CrackURL.obj" : $(SOURCE) $(DEP_CPP_CRACK) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1417,14 +1223,6 @@ DEP_CPP_CRACK=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Debug"
 
-DEP_CPP_CRACK=\
-	".\CrackURL.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 
 "$(INTDIR)\CrackURL.obj" : $(SOURCE) $(DEP_CPP_CRACK) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1432,14 +1230,6 @@ DEP_CPP_CRACK=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Release Static"
 
-DEP_CPP_CRACK=\
-	".\CrackURL.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 
 "$(INTDIR)\CrackURL.obj" : $(SOURCE) $(DEP_CPP_CRACK) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1452,12 +1242,9 @@ DEP_CPP_CRACK=\
 # Begin Source File
 
 SOURCE=.\SelectURLsDlg.cpp
-
-!IF  "$(CFG)" == "Dipstick - Win32 Release"
-
 DEP_CPP_SELEC=\
 	".\CrackURL.h"\
-	".\Dipstick.h"\
+	".\dipstick.h"\
 	".\SelectURLsDlg.h"\
 	".\shared-code\ip_icmp.h"\
 	".\shared-code\kICMP.h"\
@@ -1465,6 +1252,9 @@ DEP_CPP_SELEC=\
 	".\shared-code\RegEx.h"\
 	".\stdafx.h"\
 	
+
+!IF  "$(CFG)" == "Dipstick - Win32 Release"
+
 
 "$(INTDIR)\SelectURLsDlg.obj" : $(SOURCE) $(DEP_CPP_SELEC) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1472,16 +1262,6 @@ DEP_CPP_SELEC=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Debug"
 
-DEP_CPP_SELEC=\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\SelectURLsDlg.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 
 "$(INTDIR)\SelectURLsDlg.obj" : $(SOURCE) $(DEP_CPP_SELEC) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1489,16 +1269,6 @@ DEP_CPP_SELEC=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Release Static"
 
-DEP_CPP_SELEC=\
-	".\CrackURL.h"\
-	".\Dipstick.h"\
-	".\SelectURLsDlg.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 
 "$(INTDIR)\SelectURLsDlg.obj" : $(SOURCE) $(DEP_CPP_SELEC) "$(INTDIR)"\
  "$(INTDIR)\dipstick.pch"
@@ -1511,9 +1281,6 @@ DEP_CPP_SELEC=\
 # Begin Source File
 
 SOURCE=".\shared-code\RegEx.cpp"
-
-!IF  "$(CFG)" == "Dipstick - Win32 Release"
-
 DEP_CPP_REGEX=\
 	".\CrackURL.h"\
 	".\shared-code\ip_icmp.h"\
@@ -1522,6 +1289,9 @@ DEP_CPP_REGEX=\
 	".\shared-code\RegEx.h"\
 	".\stdafx.h"\
 	
+
+!IF  "$(CFG)" == "Dipstick - Win32 Release"
+
 # ADD CPP /Yu"../stdafx.h"
 
 "$(INTDIR)\RegEx.obj" : $(SOURCE) $(DEP_CPP_REGEX) "$(INTDIR)"\
@@ -1533,14 +1303,6 @@ DEP_CPP_REGEX=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Debug"
 
-DEP_CPP_REGEX=\
-	".\CrackURL.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 # ADD CPP /Yu"../stdafx.h"
 
 "$(INTDIR)\RegEx.obj" : $(SOURCE) $(DEP_CPP_REGEX) "$(INTDIR)"\
@@ -1552,14 +1314,6 @@ DEP_CPP_REGEX=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Release Static"
 
-DEP_CPP_REGEX=\
-	".\CrackURL.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 # ADD CPP /Yu"../stdafx.h"
 
 "$(INTDIR)\RegEx.obj" : $(SOURCE) $(DEP_CPP_REGEX) "$(INTDIR)"\
@@ -1576,9 +1330,6 @@ DEP_CPP_REGEX=\
 # Begin Source File
 
 SOURCE=".\shared-code\kICMP.cpp"
-
-!IF  "$(CFG)" == "Dipstick - Win32 Release"
-
 DEP_CPP_KICMP=\
 	".\CrackURL.h"\
 	".\shared-code\ip_icmp.h"\
@@ -1587,6 +1338,9 @@ DEP_CPP_KICMP=\
 	".\shared-code\RegEx.h"\
 	".\stdafx.h"\
 	
+
+!IF  "$(CFG)" == "Dipstick - Win32 Release"
+
 # ADD CPP /Yu"../stdafx.h"
 
 "$(INTDIR)\kICMP.obj" : $(SOURCE) $(DEP_CPP_KICMP) "$(INTDIR)"\
@@ -1598,14 +1352,6 @@ DEP_CPP_KICMP=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Debug"
 
-DEP_CPP_KICMP=\
-	".\CrackURL.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 # ADD CPP /Yu"../stdafx.h"
 
 "$(INTDIR)\kICMP.obj" : $(SOURCE) $(DEP_CPP_KICMP) "$(INTDIR)"\
@@ -1617,14 +1363,6 @@ DEP_CPP_KICMP=\
 
 !ELSEIF  "$(CFG)" == "Dipstick - Win32 Release Static"
 
-DEP_CPP_KICMP=\
-	".\CrackURL.h"\
-	".\shared-code\ip_icmp.h"\
-	".\shared-code\kICMP.h"\
-	".\shared-code\ms_icmp.h"\
-	".\shared-code\RegEx.h"\
-	".\stdafx.h"\
-	
 # ADD CPP /Yu"../stdafx.h"
 
 "$(INTDIR)\kICMP.obj" : $(SOURCE) $(DEP_CPP_KICMP) "$(INTDIR)"\
